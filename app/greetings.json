@@ -1,0 +1,8 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["hi", "hello", "hey", "helloo", "hellooo", "g morining", "gmorning", "good morning", "morning", "good day", "good afternoon", "good evening", "greetings", "greeting", "good to see you", "its good seeing you", "howdy"],
+         "responses": ["Hello!", "Hello there", "Heyo", "heeelooo", "morning mate", "Good morning", "Good day", "Good afternoon"],
+         "context_set": ""
+        }
+   ]
+}

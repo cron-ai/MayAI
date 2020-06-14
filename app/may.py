@@ -22,11 +22,12 @@ def signal_handler(signal, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 # Token
-token = ''
+ftoken = open("data/token.txt", "r")
+token = ftoken.read()
 
 client = commands.Bot(command_prefix='>')
 
-with open("greetings.json") as file:
+with open("data/json/greetings.json") as file:
     data = json.load(file)
 
 greetings = []
@@ -80,12 +81,14 @@ async def on_ready():
 @client.event
 
 async def on_message(message):
-
-    # Valid channels
-    valid_channels = ["cron-may-testing"]
+    bitcoin = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
+    quotes = 'https://type.fit/api/quotes'
+    async with aiohttp.ClientSession() as session:
+        # Valid channels
+        valid_channels = ["cron-may-testing"]
+        print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
 
     if str(message.channel) in valid_channels:      
-
         if message.author == client.user:
             return
         
@@ -119,5 +122,21 @@ async def on_message(message):
 
             await reply(message, response)
 
-
+        elif message.content.startswith("!decrypt"):
+            dapi = requests.get('https://md5decrypt.net/Api/api.php?hash=' + message.content[9:] + '&hash_type=md5&email=deanna_abshire@proxymail.eu&code=1152464b80a61728').text
+            await message.channel.send(dapi)
+        elif "bitcoin price" in message.content.lower():   
+            raw_response = await session.get(bitcoin)
+            response = await raw_response.text()
+            response = json.loads(response)
+            await message.channel.send("Bitcoin price is: $" + response['bpi']['USD']['rate'])  
+        elif "quotes" in message.content.lower():
+            raw_response = await session.get(quotes)
+            response = await raw_response.text()
+            response = json.loads(response)
+            n = random.randint(0,2000)
+            w = len(response[n]['text'])
+            await message.channel.trigger_typing()
+            await asyncio.sleep(w*0.05)
+            await message.channel.send("'" + response[n]['text'] + "', by " + response[n]['author'] + ".")        
 client.run(token)

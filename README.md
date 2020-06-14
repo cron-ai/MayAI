@@ -1,4 +1,4 @@
-Node.JS Chat
+MayAI
 ============
 [![GitHub Stars](https://img.shields.io/github/stars/cron-ai/MayAI.svg)](cron-ai/MayAI/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/cron-ai/MayAI.svg)](https://github.com/IgorAntun/node-chat/issues) [![Current Version](https://img.shields.io/badge/version-1.0.7-green.svg)](https://github.com/cron-ai/MayAI)
 

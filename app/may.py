@@ -122,6 +122,17 @@ async def on_message(message):
 
             await reply(message, response)
 
+        elif "!help" in message.content.lower():
+
+            embed = discord.embed(
+                    color = discord.Colour.red()
+                )
+
+            embed.set_author(name='Help')
+            embed.add_field(name='!decrypt [hash]', value='Decrypts hash', inline=False)
+
+            await message.channel.send(embed=embed)
+            
         elif message.content.startswith("!decrypt"):
             dapi = requests.get('https://md5decrypt.net/Api/api.php?hash=' + message.content[9:] + '&hash_type=md5&email=deanna_abshire@proxymail.eu&code=1152464b80a61728').text
             await message.channel.send(dapi)

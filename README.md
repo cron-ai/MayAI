@@ -1,6 +1,7 @@
 MayAI
 ============
-[![GitHub Stars](https://img.shields.io/github/stars/cron-ai/MayAI.svg)](cron-ai/MayAI/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/cron-ai/MayAI.svg)](https://github.com/IgorAntun/node-chat/issues) [![Current Version](https://img.shields.io/badge/version-1.0.7-green.svg)](https://github.com/cron-ai/MayAI)
+[![GitHub Stars](https://img.shields.io/github/stars/cron-ai/MayAI.svg)](https://github.com/cron-ai/MayAI/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/cron-ai/MayAI.svg)](https://github.com/cron-ai/MayAI/issues) [![Current Version](https://img.shields.io/badge/version-0.0.2-green.svg)](https://github.com/cron-ai/MayAI) (https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cron-ai/MayAI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 MayAI, yet another not-your-typical Discord bot.
 
